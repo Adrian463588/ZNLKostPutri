@@ -1,12 +1,12 @@
-# ZNL Kost Putri - Landing Page
+# ZNL Kost Putri - Official Landing Page
 
 [![Live Demo](https://img.shields.io/badge/Live_Demo-znlkostputri.edgeone.dev-success?style=for-the-badge&logo=vercel)](https://znlkostputri.edgeone.dev/)
 
-Ini adalah *Frontend-only Landing Page* modern yang dibangun untuk ZNL Kost Putri di Yogyakarta. 
+🌍 **Kunjungi Website:** [https://znlkostputri.edgeone.dev/](https://znlkostputri.edgeone.dev/)
 
-🌍 **Live Website:** [https://znlkostputri.edgeone.dev/](https://znlkostputri.edgeone.dev/)
+**ZNL Kost Putri** adalah hunian nyaman dan strategis khusus putri di Yogyakarta. Repositori ini berisi *source code* untuk *landing page* modern yang dirancang khusus agar calon penghuni—baik mahasiswi maupun pekerja—mendapatkan pengalaman pencarian kost yang cepat, responsif, dan informatif.
 
-Situs ini berfokus pada kecepatan, aksesibilitas, dan konversi, membantu calon penghuni (mahasiswi dan pekerja) untuk mengeksplorasi fasilitas, melihat kamar, serta menghubungi admin kost dengan sangat mudah melalui integrasi peta interaktif dan WhatsApp.
+Melalui situs ini, pengunjung dapat dengan mudah melihat detail fasilitas, mengintip suasana kamar, mengecek lokasi via integrasi peta, hingga langsung menghubungi admin kost melalui WhatsApp. Desain berfokus penuh pada kecepatan akses dan kemudahan interaksi (konversi).
 
 ## 🚀 Tech Stack Utama
 
