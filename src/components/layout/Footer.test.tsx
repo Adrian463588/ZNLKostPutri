@@ -9,12 +9,16 @@ describe("Footer Component", () => {
 		expect(screen.getByRole("contentinfo")).toBeDefined();
 	});
 
-	it("displays the author attribution based on siteConfig", () => {
+	it("displays the author attribution based on siteConfig with correct link", () => {
 		render(<Footer />);
-		const authorElement = screen.getByText(
-			new RegExp(`Dibuat oleh ${siteConfig.author}`, "i"),
-		);
+		const authorElement = screen.getByRole("link", {
+			name: `LinkedIn ${siteConfig.author}`,
+		});
+
 		expect(authorElement).toBeDefined();
+		expect(authorElement.getAttribute("href")).toBe(siteConfig.authorUrl);
+		expect(authorElement.getAttribute("target")).toBe("_blank");
+		expect(authorElement.getAttribute("rel")).toContain("noopener");
 		expect(authorElement.className).toContain("text-sm");
 		expect(authorElement.className).toContain("font-medium");
 	});

@@ -12,6 +12,7 @@ export const siteConfig = {
 	address:
 		"Terban GK V No.308, Terban, Kec. Gondokusuman, Kota Yogyakarta, Daerah Istimewa Yogyakarta 55223",
 	author: "Adrian Syah Abidin",
+	authorUrl: "https://www.linkedin.com/in/adrian-syah-abidin-0416b81b9/",
 } as const;
 
 export const defaultWhatsappMessage =

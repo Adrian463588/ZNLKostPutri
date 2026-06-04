@@ -117,9 +117,15 @@ export function Footer() {
 						</p>
 					</div>
 					<div className="mt-2 flex items-center justify-center sm:mt-0">
-						<p className="rounded-full bg-background/10 px-5 py-2.5 text-sm font-medium text-background shadow-sm ring-1 ring-white/10 transition-all hover:bg-background/20 hover:text-white sm:px-4 sm:py-2">
+						<a
+							href={siteConfig.authorUrl}
+							target="_blank"
+							rel="noopener noreferrer"
+							aria-label={`LinkedIn ${siteConfig.author}`}
+							className="rounded-full bg-background/10 px-5 py-2.5 text-sm font-medium text-background shadow-sm ring-1 ring-white/10 transition-all hover:bg-background/20 hover:text-white sm:px-4 sm:py-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-foreground"
+						>
 							Dibuat oleh {siteConfig.author}
-						</p>
+						</a>
 					</div>
 				</div>
 			</div>
