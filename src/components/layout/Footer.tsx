@@ -115,7 +115,7 @@ export function Footer() {
 						<p className="text-xs text-background/40">
 							{siteConfig.location}, Daerah Istimewa Yogyakarta
 						</p>
-						<p className="text-xs text-background/40 text-muted-foreground/50">
+						<p className="text-xs text-background/50">
 							Dibuat oleh {siteConfig.author}
 						</p>
 					</div>
