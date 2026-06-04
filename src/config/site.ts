@@ -11,6 +11,7 @@ export const siteConfig = {
 	instagramUrl: "",
 	address:
 		"Terban GK V No.308, Terban, Kec. Gondokusuman, Kota Yogyakarta, Daerah Istimewa Yogyakarta 55223",
+	author: "Adrian Syah Abidin",
 } as const;
 
 export const defaultWhatsappMessage =

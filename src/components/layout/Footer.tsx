@@ -111,9 +111,14 @@ export function Footer() {
 					<p className="text-xs text-background/50">
 						© {currentYear} {siteConfig.name}. Semua hak dilindungi.
 					</p>
-					<p className="text-xs text-background/40">
-						{siteConfig.location}, Daerah Istimewa Yogyakarta
-					</p>
+					<div className="flex flex-col items-center gap-1 sm:items-end">
+						<p className="text-xs text-background/40">
+							{siteConfig.location}, Daerah Istimewa Yogyakarta
+						</p>
+						<p className="text-xs text-background/40 text-muted-foreground/50">
+							Dibuat oleh {siteConfig.author}
+						</p>
+					</div>
 				</div>
 			</div>
 		</footer>
