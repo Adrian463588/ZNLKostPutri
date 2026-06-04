@@ -107,15 +107,15 @@ export function Footer() {
 				<Separator className="bg-background/10" />
 
 				{/* Copyright */}
-				<div className="flex flex-col items-center justify-between gap-2 py-6 text-center sm:flex-row">
-					<p className="text-xs text-background/50">
+				<div className="flex flex-col items-center justify-between gap-4 py-6 text-center sm:flex-row">
+					<p className="text-sm text-background/70">
 						© {currentYear} {siteConfig.name}. Semua hak dilindungi.
 					</p>
 					<div className="flex flex-col items-center gap-1 sm:items-end">
-						<p className="text-xs text-background/40">
+						<p className="text-sm text-background/70">
 							{siteConfig.location}, Daerah Istimewa Yogyakarta
 						</p>
-						<p className="text-xs text-background/50">
+						<p className="text-sm font-medium text-background transition-colors hover:text-primary">
 							Dibuat oleh {siteConfig.author}
 						</p>
 					</div>
