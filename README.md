@@ -1,36 +1,83 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# ZNL Kost Putri - Landing Page
 
-## Getting Started
+Ini adalah *Frontend-only Landing Page* modern yang dibangun untuk ZNL Kost Putri di Yogyakarta. Situs ini berfokus pada kecepatan, aksesibilitas, dan konversi, membantu calon penghuni (mahasiswi dan pekerja) untuk mengeksplorasi fasilitas, melihat kamar, serta menghubungi admin kost dengan sangat mudah melalui integrasi peta interaktif dan WhatsApp.
 
-First, run the development server:
+## 🚀 Tech Stack Utama
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+- **Framework**: [Next.js 16](https://nextjs.org/) (App Router)
+- **Library UI**: [React 19](https://react.dev/)
+- **Styling**: [Tailwind CSS v4](https://tailwindcss.com/)
+- **Animasi**: [Motion (Framer Motion)](https://motion.dev/)
+- **Komponen UI**: [shadcn/ui](https://ui.shadcn.com/)
+- **Bahasa**: TypeScript
+- **Ikon**: Lucide React
+
+## 📂 Struktur Proyek (Project Structure)
+
+Proyek ini disusun dengan mematuhi *clean code* dan pemisahan arsitektur SOLID. Seluruh inti kode berada di dalam direktori `src/`.
+
+```text
+znl-kost-putri/
+├── .github/workflows/   # Pipeline CI/CD GitHub Actions
+├── public/              # Aset statis publik (images, videos)
+└── src/
+    ├── app/             # Routing Next.js (layout.tsx, page.tsx, globals.css)
+    ├── components/      # UI Modular
+    │   ├── common/      # Komponen general (Container, SectionHeading)
+    │   ├── layout/      # Komponen kerangka (Header, Footer, MobileNav)
+    │   ├── sections/    # Potongan seksi utama Landing Page
+    │   └── ui/          # Elemen desain murni bawaan shadcn/ui
+    ├── config/          # Data konfigurasi global (site.ts, metadata)
+    ├── data/            # Penyimpanan data konten statis (Fasilitas, FAQ, Gallery)
+    ├── lib/             # Utility functions
+    └── types/           # Definisi interface TypeScript statis
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🛠️ Cara Menjalankan Proyek Secara Lokal (Getting Started)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Prasyarat Sistem (Prerequisites)
+Pastikan Anda memiliki **Node.js** versi **20.x atau lebih baru** yang terinstal di komputer.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### Langkah Instalasi
+1. Lakukan *clone* repositori dan masuk ke dalam folder utama:
+   ```bash
+   git clone https://github.com/Adrian463588/ZNLKostPutri.git
+   cd znl-kost-putri
+   ```
 
-## Learn More
+2. Instal seluruh dependensi proyek secara *clean*:
+   ```bash
+   npm install
+   ```
 
-To learn more about Next.js, take a look at the following resources:
+3. Jalankan *server development* lokal:
+   ```bash
+   npm run dev
+   ```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+4. Buka [http://localhost:3000](http://localhost:3000) di browser Anda untuk melihat hasilnya. Proyek memiliki fitur *Hot-Reload*, sehingga setiap perubahan pada file di dalam `src/` akan langsung terlihat di layar Anda.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 🧪 Code Quality & Testing (Panduan Developer)
 
-## Deploy on Vercel
+Proyek ini menerapkan batasan kualitas kode yang ketat untuk memastikan tidak ada kesalahan fungsi *(regression)* dan inkonsistensi struktur. Proyek diawasi oleh otomatisasi CI/CD lewat GitHub Actions.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Sebelum melakukan *Pull Request* atau mendorong (*push*) pembaruan apa pun, sangat disarankan bagi para developer untuk menjalankan validasi berikut:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- **Merapikan Kode (Formatting):**
+  Meratakan struktur dan estetika kode dengan linter *Biome*.
+  ```bash
+  npm run format
+  ```
+- **Validasi Kesalahan Penulisan (Linting):**
+  Menangkap *warning* aksesibilitas HTML dan anomali TS/JS.
+  ```bash
+  npm run check
+  ```
+- **Uji Coba Fungsional (Unit Testing):**
+  Menjalankan tes dengan framework *Vitest* + *React Testing Library* yang meniru DOM (*jsdom*).
+  ```bash
+  npm run test
+  ```
+
+---
+*Dikembangkan dengan dedikasi tinggi agar menjadi repositori Frontend teladan dengan pendekatan **DRY (Don't Repeat Yourself)** dan **Best Practice UI/UX**.*
