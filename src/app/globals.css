@@ -1,26 +1,123 @@
 @import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
 
+@custom-variant dark (&:is(.dark *));
+
+/* ============================================
+   ZNL Kost Putri — Warm Brown Design Tokens
+   ============================================ */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+	/* Warm background: off-white/cream */
+	--background: oklch(0.975 0.008 80);
+	/* Dark neutral text */
+	--foreground: oklch(0.18 0.01 50);
+
+	/* Pure white cards */
+	--card: oklch(1 0 0);
+	--card-foreground: oklch(0.18 0.01 50);
+
+	/* Popover */
+	--popover: oklch(1 0 0);
+	--popover-foreground: oklch(0.18 0.01 50);
+
+	/* Primary: warm brown */
+	--primary: oklch(0.48 0.07 60);
+	--primary-foreground: oklch(0.975 0.008 80);
+
+	/* Secondary: light beige */
+	--secondary: oklch(0.93 0.015 75);
+	--secondary-foreground: oklch(0.35 0.06 55);
+
+	/* Muted: soft warm gray */
+	--muted: oklch(0.93 0.012 75);
+	--muted-foreground: oklch(0.52 0.025 55);
+
+	/* Accent: terracotta/muted rose */
+	--accent: oklch(0.64 0.09 35);
+	--accent-foreground: oklch(0.98 0 0);
+
+	/* Destructive */
+	--destructive: oklch(0.577 0.245 27.325);
+
+	/* Border: soft warm neutral */
+	--border: oklch(0.88 0.014 75);
+	--input: oklch(0.88 0.014 75);
+	--ring: oklch(0.48 0.07 60);
+
+	/* Radius */
+	--radius: 0.75rem;
+
+	/* Sidebar (not used but required by shadcn) */
+	--sidebar: oklch(0.975 0.008 80);
+	--sidebar-foreground: oklch(0.18 0.01 50);
+	--sidebar-primary: oklch(0.48 0.07 60);
+	--sidebar-primary-foreground: oklch(0.975 0.008 80);
+	--sidebar-accent: oklch(0.93 0.015 75);
+	--sidebar-accent-foreground: oklch(0.35 0.06 55);
+	--sidebar-border: oklch(0.88 0.014 75);
+	--sidebar-ring: oklch(0.48 0.07 60);
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+	--color-background: var(--background);
+	--color-foreground: var(--foreground);
+	--color-card: var(--card);
+	--color-card-foreground: var(--card-foreground);
+	--color-popover: var(--popover);
+	--color-popover-foreground: var(--popover-foreground);
+	--color-primary: var(--primary);
+	--color-primary-foreground: var(--primary-foreground);
+	--color-secondary: var(--secondary);
+	--color-secondary-foreground: var(--secondary-foreground);
+	--color-muted: var(--muted);
+	--color-muted-foreground: var(--muted-foreground);
+	--color-accent: var(--accent);
+	--color-accent-foreground: var(--accent-foreground);
+	--color-destructive: var(--destructive);
+	--color-border: var(--border);
+	--color-input: var(--input);
+	--color-ring: var(--ring);
+	--radius-sm: calc(var(--radius) * 0.6);
+	--radius-md: calc(var(--radius) * 0.8);
+	--radius-lg: var(--radius);
+	--radius-xl: calc(var(--radius) * 1.4);
+	--radius-2xl: calc(var(--radius) * 1.8);
+	--radius-3xl: calc(var(--radius) * 2.4);
+	--color-sidebar: var(--sidebar);
+	--color-sidebar-foreground: var(--sidebar-foreground);
+	--color-sidebar-primary: var(--sidebar-primary);
+	--color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+	--color-sidebar-accent: var(--sidebar-accent);
+	--color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+	--color-sidebar-border: var(--sidebar-border);
+	--color-sidebar-ring: var(--sidebar-ring);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
+@layer base {
+	* {
+		@apply border-border outline-ring/50;
+	}
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+	html {
+		scroll-behavior: smooth;
+		@apply font-sans;
+	}
+
+	body {
+		@apply bg-background text-foreground;
+		font-feature-settings:
+			"rlig" 1,
+			"calt" 1;
+	}
+
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		font-weight: 600;
+		letter-spacing: -0.025em;
+	}
 }
