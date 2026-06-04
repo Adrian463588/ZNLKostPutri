@@ -1,6 +1,7 @@
 "use client";
 
 import { MessageCircle } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { MobileNav } from "@/components/layout/MobileNav";
@@ -43,9 +44,13 @@ export function Header() {
 					className="flex items-center gap-2 group"
 					aria-label="ZNL Kost Putri - Beranda"
 				>
-					<div className="flex h-8 w-8 items-center justify-center rounded-full bg-primary text-primary-foreground text-sm font-bold transition-transform duration-200 group-hover:scale-105">
-						Z
-					</div>
+					<Image
+						src="/images/IconWebsite.png"
+						alt={`Logo ${siteConfig.name}`}
+						width={32}
+						height={32}
+						className="rounded-full shadow-sm transition-transform duration-200 group-hover:scale-110"
+					/>
 					<span className="text-base font-semibold text-foreground tracking-tight">
 						{siteConfig.name}
 					</span>

@@ -1,4 +1,5 @@
 import { MapPin, MessageCircle, Share2 } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 import { Separator } from "@/components/ui/separator";
 import { siteConfig, whatsappUrl } from "@/config/site";
@@ -14,9 +15,13 @@ export function Footer() {
 					{/* Brand */}
 					<div className="flex flex-col gap-4">
 						<div className="flex items-center gap-2">
-							<div className="flex h-8 w-8 items-center justify-center rounded-full bg-primary text-primary-foreground text-sm font-bold">
-								Z
-							</div>
+							<Image
+								src="/images/IconWebsite.png"
+								alt={`Logo ${siteConfig.name}`}
+								width={32}
+								height={32}
+								className="rounded-full shadow-sm"
+							/>
 							<span className="text-base font-semibold">{siteConfig.name}</span>
 						</div>
 						<p className="text-sm leading-6 text-background/70 max-w-xs">
