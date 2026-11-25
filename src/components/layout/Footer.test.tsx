@@ -12,7 +12,7 @@ describe("Footer Component", () => {
 	it("displays the author attribution based on siteConfig with correct link", () => {
 		render(<Footer />);
 		const authorElement = screen.getByRole("link", {
-			name: `LinkedIn ${siteConfig.author}`,
+			name: new RegExp(`Dibuat oleh ${siteConfig.author}`, "i"),
 		});
 
 		expect(authorElement).toBeDefined();

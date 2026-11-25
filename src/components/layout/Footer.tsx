@@ -16,17 +16,18 @@ export function Footer() {
 					<div className="flex flex-col gap-4">
 						<div className="flex items-center gap-2">
 							<Image
-								src="/images/IconWebsite.png"
+								src="/images/logo-znl-kost-putri.webp"
 								alt={`Logo ${siteConfig.name}`}
 								width={32}
 								height={32}
+								loading="lazy"
 								className="rounded-full shadow-sm"
 							/>
 							<span className="text-base font-semibold">{siteConfig.name}</span>
 						</div>
 						<p className="text-sm leading-6 text-background/70 max-w-xs">
-							Kost putri nyaman dan strategis di Yogyakarta untuk mahasiswi dan
-							pekerja wanita.
+							Kost putri nyaman dan strategis di {siteConfig.area},{" "}
+							{siteConfig.location} untuk mahasiswi dan pekerja wanita.
 						</p>
 					</div>
 
@@ -68,10 +69,12 @@ export function Footer() {
 									target="_blank"
 									rel="noopener noreferrer"
 									className="flex items-center gap-2 text-sm text-background/70 transition-colors hover:text-background"
-									aria-label="Hubungi via WhatsApp"
 								>
-									<MessageCircle className="h-4 w-4 shrink-0" />
-									WhatsApp Ibu Kost
+									<MessageCircle
+										className="h-4 w-4 shrink-0"
+										aria-hidden="true"
+									/>
+									WhatsApp Ibu Kost ({siteConfig.phoneDisplay})
 								</a>
 							</li>
 							<li>
@@ -80,10 +83,10 @@ export function Footer() {
 									target="_blank"
 									rel="noopener noreferrer"
 									className="flex items-center gap-2 text-sm text-background/70 transition-colors hover:text-background"
-									aria-label="Buka lokasi di Google Maps"
 								>
-									<MapPin className="h-4 w-4 shrink-0" />
-									{siteConfig.address}
+									<MapPin className="h-4 w-4 shrink-0" aria-hidden="true" />
+									<span>{siteConfig.address}</span>
+									<span className="sr-only"> (Buka di Google Maps)</span>
 								</a>
 							</li>
 							{siteConfig.instagramUrl ? (
@@ -93,10 +96,10 @@ export function Footer() {
 										target="_blank"
 										rel="noopener noreferrer"
 										className="flex items-center gap-2 text-sm text-background/70 transition-colors hover:text-background"
-										aria-label="Instagram ZNL Kost Putri"
 									>
-										<Share2 className="h-4 w-4 shrink-0" />
+										<Share2 className="h-4 w-4 shrink-0" aria-hidden="true" />
 										Instagram
+										<span className="sr-only"> {siteConfig.name}</span>
 									</a>
 								</li>
 							) : null}
@@ -113,7 +116,7 @@ export function Footer() {
 							© {currentYear} {siteConfig.name}. Semua hak dilindungi.
 						</p>
 						<p className="text-sm text-background/70">
-							{siteConfig.location}, Daerah Istimewa Yogyakarta
+							{siteConfig.area}, {siteConfig.location}, {siteConfig.region}
 						</p>
 					</div>
 					<div className="mt-2 flex items-center justify-center sm:mt-0">
@@ -121,10 +124,10 @@ export function Footer() {
 							href={siteConfig.authorUrl}
 							target="_blank"
 							rel="noopener noreferrer"
-							aria-label={`LinkedIn ${siteConfig.author}`}
 							className="rounded-full bg-background/10 px-5 py-2.5 text-sm font-medium text-background shadow-sm ring-1 ring-white/10 transition-all hover:bg-background/20 hover:text-white sm:px-4 sm:py-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-foreground"
 						>
 							Dibuat oleh {siteConfig.author}
+							<span className="sr-only"> (LinkedIn)</span>
 						</a>
 					</div>
 				</div>

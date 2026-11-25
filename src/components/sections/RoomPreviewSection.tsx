@@ -109,10 +109,10 @@ export function RoomPreviewSection() {
 										src="/videos/DetailKamar.mp4"
 										controls
 										playsInline
-										preload="metadata"
+										preload="none"
 										className="h-full w-full object-cover"
-										poster="/images/TampakDepan.png"
-										aria-label="Video preview kamar ZNL Kost Putri"
+										poster="/images/video-poster-kamar.webp"
+										aria-label="Video preview kamar ZNL Kost Putri Terban, Gondokusuman"
 									>
 										<track kind="captions" />
 										Maaf, browser Anda tidak mendukung pemutar video HTML5.

@@ -45,10 +45,11 @@ export function Header() {
 					aria-label="ZNL Kost Putri - Beranda"
 				>
 					<Image
-						src="/images/IconWebsite.png"
+						src="/images/logo-znl-kost-putri.webp"
 						alt={`Logo ${siteConfig.name}`}
 						width={32}
 						height={32}
+						loading="eager"
 						className="rounded-full shadow-sm transition-transform duration-200 group-hover:scale-110"
 					/>
 					<span className="text-base font-semibold text-foreground tracking-tight">

@@ -29,7 +29,7 @@ export function FAQSection() {
 
 				<MotionWrapper delay={0.1} className="mt-12 max-w-3xl mx-auto">
 					<Accordion className="space-y-3">
-						{faqs.map((faq, _index) => (
+						{faqs.map((faq) => (
 							<AccordionItem
 								key={faq.question}
 								value={faq.question}

@@ -1,42 +1,44 @@
-type FAQ = {
-	question: string;
-	answer: string;
-};
+import type { FAQ } from "@/types";
 
 export const faqs: readonly FAQ[] = [
 	{
 		question: "Apakah ZNL Kost Putri khusus putri?",
 		answer:
-			"Iya, Nduk. ZNL Kost Putri ini memang khusus untuk penghuni putri saja biar semuanya lebih nyaman dan merasa aman selama tinggal di sini.",
+			"Iya, Nduk. ZNL Kost Putri ini memang khusus untuk penghuni putri saja—baik mahasiswi maupun pekerja wanita—biar semuanya lebih nyaman dan merasa tenang selama tinggal di sini.",
+	},
+	{
+		question: "Di mana lokasi lengkap ZNL Kost Putri?",
+		answer:
+			"Lokasinya berada di Terban GK V No.308, Terban, Kecamatan Gondokusuman, Kota Yogyakarta, DIY 55223. Areanya berada di tengah kota sehingga mudah diakses menuju kawasan kampus seperti UGM dan UNY serta fasilitas umum sekitar Gondokusuman.",
 	},
 	{
 		question: "Apakah boleh survei lokasi sebelum memutuskan untuk sewa?",
 		answer:
-			"Boleh banget! Ibu sangat menyarankan kalian buat datang lihat langsung kamar dan lingkungannya biar mantap. Silakan chat Ibu via WhatsApp ya buat janjian waktu surveinya.",
+			"Boleh banget! Ibu sangat menyarankan calon penghuni untuk datang melihat langsung kamar dan lingkungannya di Terban biar lebih mantap. Silakan chat Ibu via WhatsApp di +62 821-9780-9087 untuk janjian jadwal survei.",
 	},
 	{
 		question: "Bagaimana cara mengecek ketersediaan kamar?",
 		answer:
-			"Langsung chat Ibu aja lewat tombol WhatsApp di bawah, ya. Nanti Ibu akan langsung balas dan kasih tahu kamar mana saja yang masih kosong.",
+			"Langsung chat Ibu lewat tombol WhatsApp di halaman ini, ya. Nanti Ibu akan langsung balas dan informasikan tipe serta kamar mana saja yang sedang tersedia.",
 	},
 	{
 		question: "Apakah kamar mandi ada di dalam atau di luar?",
 		answer:
-			"Untuk semua tipe kamar di sini menggunakan kamar mandi luar ya, Nduk. Tapi tidak usah khawatir, jumlah kamar mandinya cukup dan selalu dijaga kebersihannya.",
+			"Untuk seluruh kamar di sini menggunakan kamar mandi luar ya, Nduk. Jumlah kamar mandinya memadai dan kebersihannya selalu dijaga secara berkala.",
 	},
 	{
 		question: "Apakah sudah termasuk listrik dan air?",
 		answer:
-			"Sebagian besar sudah termasuk, tapi untuk detail pastinya nanti kita obrolin lewat WhatsApp ya, soalnya setiap tipe kamar bisa sedikit berbeda detail sewanya.",
+			"Sebagian besar sudah termasuk, namun untuk rincian ketentuan listrik dan air sesuai pemakaian bisa langsung ditanyakan lewat WhatsApp karena detail tiap kamar dapat berbeda.",
 	},
 	{
 		question: "Berapa biaya sewa kamarnya?",
 		answer:
-			"Harganya bervariasi tergantung tipe kamar yang dipilih. Silakan chat Ibu langsung untuk tanya harga ter-update-nya, ya.",
+			"Biaya sewa menyesuaikan pilihan kamar yang tersedia saat ini. Silakan hubungi Ibu langsung via WhatsApp untuk mendapatkan informasi tarif terbaru.",
 	},
 	{
 		question: "Apakah ada peraturan jam malam di kost ini?",
 		answer:
-			"Sebenarnya Ibu tidak terlalu membatasi jam malam, tapi sebaiknya jangan sering-sering pulang terlalu malam demi keamanan dan supaya tidak mengganggu penghuni lain yang sedang istirahat. Kita sama-sama jaga kenyamanan ya, Nduk.",
+			"Ibu tidak menerapkan jam malam yang kaku, tetapi penghuni diharapkan menjaga ketenangan terutama saat malam hari demi keamanan dan kenyamanan bersama di lingkungan kost.",
 	},
-] as const;
+];

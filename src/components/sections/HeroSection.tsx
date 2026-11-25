@@ -1,7 +1,4 @@
-"use client";
-
 import { ArrowRight, MapPin, MessageCircle } from "lucide-react";
-import { motion } from "motion/react";
 import Image from "next/image";
 import { Badge } from "@/components/ui/badge";
 import { buttonVariants } from "@/components/ui/button";
@@ -29,45 +26,24 @@ export function HeroSection() {
 				<div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2">
 					{/* Text content */}
 					<div className="flex flex-col items-start gap-6">
-						<motion.div
-							initial={{ opacity: 0, y: 20 }}
-							animate={{ opacity: 1, y: 0 }}
-							transition={{ duration: 0.5, ease: "easeOut" }}
+						<Badge
+							variant="secondary"
+							className="px-3 py-1.5 text-xs font-semibold uppercase tracking-wider bg-primary/10 text-primary border-primary/20"
 						>
-							<Badge
-								variant="secondary"
-								className="px-3 py-1.5 text-xs font-semibold uppercase tracking-wider bg-primary/10 text-primary border-primary/20"
-							>
-								Kost Putri Area Yogyakarta
-							</Badge>
-						</motion.div>
+							Kost Putri {siteConfig.area}
+						</Badge>
 
-						<motion.h1
-							className="text-4xl font-bold leading-[1.15] tracking-tight text-foreground sm:text-5xl lg:text-6xl"
-							initial={{ opacity: 0, y: 24 }}
-							animate={{ opacity: 1, y: 0 }}
-							transition={{ duration: 0.5, ease: "easeOut", delay: 0.1 }}
-						>
-							Kost Putri <span className="text-primary">Nyaman</span>,{" "}
-							<span className="text-accent">Aman</span>, dan Strategis{" "}
-							<span className="text-primary">di Yogyakarta</span>
-						</motion.h1>
+						<h1 className="text-4xl font-bold leading-[1.15] tracking-tight text-foreground sm:text-5xl lg:text-6xl">
+							Kost Putri di <span className="text-primary">Terban</span>,{" "}
+							<span className="text-accent">Gondokusuman</span>,{" "}
+							<span className="text-primary">Yogyakarta</span>
+						</h1>
 
-						<motion.p
-							className="max-w-lg text-base leading-7 text-muted-foreground sm:text-lg"
-							initial={{ opacity: 0, y: 24 }}
-							animate={{ opacity: 1, y: 0 }}
-							transition={{ duration: 0.5, ease: "easeOut", delay: 0.2 }}
-						>
+						<p className="max-w-lg text-base leading-7 text-muted-foreground sm:text-lg">
 							{siteConfig.description}
-						</motion.p>
+						</p>
 
-						<motion.div
-							className="flex flex-col gap-3 sm:flex-row"
-							initial={{ opacity: 0, y: 24 }}
-							animate={{ opacity: 1, y: 0 }}
-							transition={{ duration: 0.5, ease: "easeOut", delay: 0.3 }}
-						>
+						<div className="flex flex-col gap-3 sm:flex-row">
 							<a
 								href={whatsappUrl}
 								target="_blank"
@@ -77,9 +53,12 @@ export function HeroSection() {
 									"group gap-2 bg-primary text-primary-foreground hover:bg-primary/90 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-lg active:translate-y-0 focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2",
 								)}
 							>
-								<MessageCircle className="h-4 w-4" />
+								<MessageCircle className="h-4 w-4" aria-hidden="true" />
 								Hubungi via WhatsApp
-								<ArrowRight className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-1" />
+								<ArrowRight
+									className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-1"
+									aria-hidden="true"
+								/>
 							</a>
 
 							<a
@@ -91,43 +70,35 @@ export function HeroSection() {
 									"gap-2 border-border hover:bg-secondary hover:text-foreground transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md active:translate-y-0",
 								)}
 							>
-								<MapPin className="h-4 w-4" />
+								<MapPin className="h-4 w-4" aria-hidden="true" />
 								Lihat Lokasi
 							</a>
-						</motion.div>
+						</div>
 
 						{/* Trust indicators */}
-						<motion.div
-							className="flex flex-wrap items-center gap-4 text-sm text-muted-foreground"
-							initial={{ opacity: 0 }}
-							animate={{ opacity: 1 }}
-							transition={{ duration: 0.5, delay: 0.5 }}
-						>
+						<div className="flex flex-wrap items-center gap-4 text-sm text-muted-foreground">
 							{[
 								"✓ Khusus Putri",
-								"✓ Lingkungan Aman",
-								"✓ Lokasi Strategis",
+								"✓ Lingkungan Tenang",
+								"✓ Terban, Gondokusuman",
 							].map((item) => (
 								<span key={item} className="font-medium text-foreground/70">
 									{item}
 								</span>
 							))}
-						</motion.div>
+						</div>
 					</div>
 
-					{/* Hero Image */}
-					<motion.div
-						className="relative"
-						initial={{ opacity: 0, scale: 0.96 }}
-						animate={{ opacity: 1, scale: 1 }}
-						transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 }}
-					>
+					{/* Hero Image — immediate SSR render for fast LCP */}
+					<div className="relative">
 						<div className="relative aspect-[4/3] w-full overflow-hidden rounded-2xl shadow-2xl ring-1 ring-border/40">
 							<Image
-								src="/images/TampakDepan.png"
-								alt="Tampak depan ZNL Kost Putri Yogyakarta"
+								src="/images/znl-kost-putri-terban.webp"
+								alt="Tampak depan ZNL Kost Putri nomor 308 di Terban, Gondokusuman, Yogyakarta"
 								fill
-								priority
+								loading="eager"
+								decoding="sync"
+								fetchPriority="high"
 								className="object-cover"
 								sizes="(max-width: 1024px) 100vw, 50vw"
 							/>
@@ -136,20 +107,15 @@ export function HeroSection() {
 						</div>
 
 						{/* Floating card */}
-						<motion.div
-							className="absolute -bottom-4 -left-4 rounded-xl bg-white p-4 shadow-lg ring-1 ring-border/40"
-							initial={{ opacity: 0, y: 16 }}
-							animate={{ opacity: 1, y: 0 }}
-							transition={{ duration: 0.5, delay: 0.6 }}
-						>
+						<div className="absolute -bottom-4 left-2 sm:-left-4 rounded-xl bg-white p-4 shadow-lg ring-1 ring-border/40">
 							<p className="text-xs font-medium text-muted-foreground">
-								Hunian nyaman
+								Terban GK V No.308
 							</p>
 							<p className="mt-0.5 text-sm font-semibold text-foreground">
-								Khusus Putri
+								Khusus Putri • Gondokusuman
 							</p>
-						</motion.div>
-					</motion.div>
+						</div>
+					</div>
 				</div>
 			</div>
 		</section>

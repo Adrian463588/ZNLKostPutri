@@ -42,29 +42,32 @@ export function CTASection() {
 									href={whatsappUrl}
 									target="_blank"
 									rel="noopener noreferrer"
-									aria-label="Chat WhatsApp Ibu Kost ZNL"
 									className={cn(
 										buttonVariants({ size: "lg" }),
 										"group gap-2 bg-white text-primary hover:bg-white/90 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-lg active:translate-y-0 font-semibold",
 									)}
 								>
-									<MessageCircle className="h-4 w-4" />
+									<MessageCircle className="h-4 w-4" aria-hidden="true" />
 									Chat Ibu di WhatsApp
-									<ArrowRight className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-1" />
+									<span className="sr-only"> — {siteConfig.name}</span>
+									<ArrowRight
+										className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-1"
+										aria-hidden="true"
+									/>
 								</a>
 
 								<a
 									href={siteConfig.googleMapsUrl}
 									target="_blank"
 									rel="noopener noreferrer"
-									aria-label="Lihat lokasi ZNL Kost Putri di Google Maps"
 									className={cn(
 										buttonVariants({ variant: "outline", size: "lg" }),
 										"group gap-2 border-white/40 bg-transparent text-primary-foreground hover:bg-white/10 hover:border-white transition-all duration-200 hover:-translate-y-0.5 active:translate-y-0",
 									)}
 								>
-									<MapPin className="h-4 w-4" />
+									<MapPin className="h-4 w-4" aria-hidden="true" />
 									Lihat Lokasi Kost
+									<span className="sr-only"> di Google Maps</span>
 								</a>
 							</div>
 						</div>

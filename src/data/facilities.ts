@@ -10,55 +10,55 @@ export const facilities: readonly Facility[] = [
 	{
 		title: "Kamar Nyaman",
 		description:
-			"Kamar bersih dan nyaman dilengkapi kasur, lemari pakaian, dan meja kecil.",
+			"Kamar bersih dan terawat dilengkapi kasur, bantal, lemari pakaian, dan meja kecil.",
 		iconName: "BedDouble",
 	},
 	{
 		title: "Kamar Mandi",
 		description:
-			"Kamar mandi bersih tersedia untuk kenyamanan dan kebersihan penghuni.",
+			"Kamar mandi luar yang bersih dan jumlahnya memadai untuk kenyamanan penghuni.",
 		iconName: "ShowerHead",
 	},
 	{
 		title: "Lokasi Strategis",
 		description:
-			"Mudah diakses dari berbagai area penting di Yogyakarta termasuk kampus dan pusat kota.",
+			"Berada di Terban, Gondokusuman dengan akses mudah ke area kampus, perkantoran, dan pusat Kota Yogyakarta.",
 		iconName: "MapPin",
 	},
 	{
 		title: "Lingkungan Tenang",
 		description:
-			"Suasana tenang dan kondusif untuk belajar, bekerja, dan beristirahat.",
+			"Suasana kondusif di permukiman Terban untuk belajar, bekerja, dan beristirahat.",
 		iconName: "Leaf",
 	},
 	{
 		title: "Area Parkir Motor",
 		description:
-			"Tersedia area parkir motor yang aman untuk kenyamanan penghuni.",
+			"Tersedia area parkir motor untuk penghuni kost di dalam lingkungan berpagar.",
 		iconName: "ParkingCircle",
 	},
 	{
 		title: "Keamanan Terjaga",
 		description:
-			"Lingkungan kost yang aman dengan akses terkontrol untuk ketenangan penghuni.",
+			"Lingkungan kost dengan pagar dan akses terkontrol untuk kenyamanan penghuni.",
 		iconName: "Lock",
 	},
 	{
 		title: "Warung Makan Dekat",
 		description:
-			"Berbagai pilihan warung makan dan minimarket tersedia di sekitar kost.",
+			"Berbagai pilihan warung makan dan minimarket mudah ditemukan di sekitar Terban dan Gondokusuman.",
 		iconName: "UtensilsCrossed",
 	},
 	{
 		title: "Dekat Fasilitas Umum",
 		description:
-			"Dekat dengan kampus, pasar, apotek, dan fasilitas umum lainnya.",
+			"Mudah menjangkau kawasan kampus seperti area UGM dan UNY, pasar, apotek, serta layanan kesehatan.",
 		iconName: "Building2",
 	},
 	{
 		title: "Bisa Survei Langsung",
 		description:
-			"Calon penghuni dipersilakan survei langsung untuk memastikan kenyamanan kamar.",
+			"Calon penghuni dipersilakan menjadwalkan survei langsung ke lokasi sebelum memutuskan menyewa.",
 		iconName: "Eye",
 	},
 ];

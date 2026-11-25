@@ -20,10 +20,13 @@ export function GallerySection() {
 					/>
 				</MotionWrapper>
 
-				<div className="mt-12 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
-					{galleryImages.map((image, index) => (
-						<MotionWrapper key={image.src} delay={index * 0.08}>
-							<div className="group relative aspect-square w-full overflow-hidden rounded-xl shadow-md ring-1 ring-border/40 cursor-pointer">
+				<MotionWrapper delay={0.1}>
+					<div className="mt-12 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+						{galleryImages.map((image) => (
+							<div
+								key={image.src}
+								className="group relative aspect-square w-full overflow-hidden rounded-xl shadow-md ring-1 ring-border/40"
+							>
 								<Image
 									src={image.src}
 									alt={image.alt}
@@ -41,9 +44,9 @@ export function GallerySection() {
 									</span>
 								</div>
 							</div>
-						</MotionWrapper>
-					))}
-				</div>
+						))}
+					</div>
+				</MotionWrapper>
 			</Container>
 		</section>
 	);

@@ -9,41 +9,71 @@ const inter = Inter({
 	display: "swap",
 });
 
+const googleVerification =
+	process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION?.trim();
+const bingVerification = process.env.NEXT_PUBLIC_BING_SITE_VERIFICATION?.trim();
+
+const verification: Metadata["verification"] =
+	googleVerification || bingVerification
+		? {
+				...(googleVerification ? { google: googleVerification } : {}),
+				...(bingVerification
+					? { other: { "msvalidate.01": bingVerification } }
+					: {}),
+			}
+		: undefined;
+
 export const metadata: Metadata = {
+	metadataBase: new URL(siteConfig.url),
 	title: {
-		default: "ZNL Kost Putri Yogyakarta | Kost Putri Nyaman dan Strategis",
+		default: siteConfig.seoTitle,
 		template: "%s | ZNL Kost Putri",
 	},
-	description:
-		"ZNL Kost Putri adalah kost putri nyaman di Yogyakarta untuk mahasiswi dan pekerja wanita. Lihat fasilitas, galeri kamar, lokasi, dan hubungi Ibu Kost.",
-	keywords: [
-		"kost putri yogyakarta",
-		"kost putri",
-		"kost mahasiswi yogyakarta",
-		"kost wanita yogyakarta",
-		"kost nyaman yogyakarta",
-		"ZNL kost putri",
-	],
+	description: siteConfig.seoDescription,
+	alternates: {
+		canonical: `${siteConfig.url}/`,
+	},
 	authors: [{ name: siteConfig.name }],
 	creator: siteConfig.name,
 	openGraph: {
 		type: "website",
 		locale: "id_ID",
-		title: "ZNL Kost Putri Yogyakarta | Kost Putri Nyaman dan Strategis",
-		description:
-			"Kost putri nyaman dan strategis di Yogyakarta untuk mahasiswi dan pekerja wanita. Lingkungan tenang, bersih, dan mudah diakses.",
+		url: `${siteConfig.url}/`,
 		siteName: siteConfig.name,
+		title: siteConfig.seoTitle,
+		description: siteConfig.seoDescription,
+		images: [
+			{
+				url: siteConfig.ogImage.url,
+				width: siteConfig.ogImage.width,
+				height: siteConfig.ogImage.height,
+				alt: siteConfig.ogImage.alt,
+			},
+		],
 	},
 	twitter: {
 		card: "summary_large_image",
-		title: "ZNL Kost Putri Yogyakarta",
-		description:
-			"Kost putri nyaman dan strategis di Yogyakarta untuk mahasiswi dan pekerja wanita.",
+		title: siteConfig.seoTitle,
+		description: siteConfig.seoDescription,
+		images: [
+			{
+				url: siteConfig.ogImage.url,
+				alt: siteConfig.ogImage.alt,
+			},
+		],
 	},
 	robots: {
 		index: true,
 		follow: true,
+		googleBot: {
+			index: true,
+			follow: true,
+			"max-video-preview": -1,
+			"max-image-preview": "large",
+			"max-snippet": -1,
+		},
 	},
+	...(verification ? { verification } : {}),
 };
 
 export default function RootLayout({
