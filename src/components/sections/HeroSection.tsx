@@ -100,7 +100,7 @@ export function HeroSection() {
 								decoding="sync"
 								fetchPriority="high"
 								className="object-cover"
-								sizes="(max-width: 1024px) 100vw, 50vw"
+								sizes="(max-width: 640px) 384px, (max-width: 1024px) 512px, 50vw"
 							/>
 							{/* Subtle overlay */}
 							<div className="absolute inset-0 bg-gradient-to-t from-foreground/20 via-transparent to-transparent" />

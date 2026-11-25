@@ -31,30 +31,63 @@ export function Footer() {
 						</p>
 					</div>
 
-					{/* Navigation */}
-					<div>
-						<h3 className="mb-4 text-sm font-semibold uppercase tracking-wider text-background/50">
-							Navigasi
-						</h3>
-						<ul className="flex flex-col gap-2">
-							{[
-								{ href: "#beranda", label: "Beranda" },
-								{ href: "#tentang", label: "Tentang" },
-								{ href: "#fasilitas", label: "Fasilitas" },
-								{ href: "#galeri", label: "Galeri" },
-								{ href: "#lokasi", label: "Lokasi" },
-								{ href: "#faq", label: "FAQ" },
-							].map((link) => (
-								<li key={link.href}>
-									<Link
-										href={link.href}
-										className="text-sm text-background/70 transition-colors hover:text-background"
-									>
-										{link.label}
-									</Link>
-								</li>
-							))}
-						</ul>
+					{/* Navigation & Guides */}
+					<div className="grid grid-cols-1 gap-8 sm:grid-cols-2">
+						<div>
+							<h3 className="mb-4 text-sm font-semibold uppercase tracking-wider text-background/50">
+								Navigasi
+							</h3>
+							<ul className="flex flex-col gap-2">
+								{[
+									{ href: "/#beranda", label: "Beranda" },
+									{ href: "/#tentang", label: "Tentang" },
+									{ href: "/#fasilitas", label: "Fasilitas" },
+									{ href: "/#kamar", label: "Kamar" },
+									{ href: "/#galeri", label: "Galeri" },
+									{ href: "/#lokasi", label: "Lokasi" },
+									{ href: "/#faq", label: "FAQ" },
+								].map((link) => (
+									<li key={link.href}>
+										<Link
+											href={link.href}
+											className="text-sm text-background/70 transition-colors hover:text-background"
+										>
+											{link.label}
+										</Link>
+									</li>
+								))}
+							</ul>
+						</div>
+						<div>
+							<h3 className="mb-4 text-sm font-semibold uppercase tracking-wider text-background/50">
+								Lokasi & Panduan
+							</h3>
+							<ul className="flex flex-col gap-2">
+								{[
+									{
+										href: "/lokasi/terban-gondokusuman",
+										label: "Terban & Gondokusuman",
+									},
+									{ href: "/akses-kampus/ugm", label: "Kost Dekat UGM" },
+									{ href: "/akses-kampus/uny", label: "Kost Dekat UNY" },
+									{ href: "/panduan", label: "Panduan Kost Jogja" },
+									{
+										href: "/tools/kalkulator-anggaran-kost",
+										label: "Kalkulator Anggaran",
+									},
+									{ href: "/kebijakan-privasi", label: "Kebijakan Privasi" },
+								].map((link) => (
+									<li key={link.href}>
+										<Link
+											href={link.href}
+											className="text-sm text-background/70 transition-colors hover:text-background"
+										>
+											{link.label}
+										</Link>
+									</li>
+								))}
+							</ul>
+						</div>
 					</div>
 
 					{/* Contact */}
