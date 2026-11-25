@@ -29,8 +29,14 @@ jobs:
       - name: Type Check (TypeScript)
         run: npx tsc --noEmit
 
+      - name: SEO Content & Asset Validation
+        run: npm run seo:validate
+
       - name: Unit Tests (Vitest)
         run: npm run test
 
       - name: Build Next.js
         run: npm run build
+
+      - name: Post-Build SEO Audit
+        run: npm run seo:audit

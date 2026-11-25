@@ -7,9 +7,11 @@ import {
 	Navigation,
 	ShoppingBag,
 } from "lucide-react";
+import Link from "next/link";
 import { Container } from "@/components/common/Container";
 import { MotionWrapper } from "@/components/common/MotionWrapper";
 import { SectionHeading } from "@/components/common/SectionHeading";
+import { LocationMapEmbed } from "@/components/property/LocationMapEmbed";
 import { buttonVariants } from "@/components/ui/button";
 import { siteConfig, whatsappUrl } from "@/config/site";
 import { cn } from "@/lib/utils";
@@ -120,23 +122,31 @@ export function LocationSection() {
 					{/* Map Preview Side */}
 					<MotionWrapper
 						delay={0.1}
-						className="relative h-full w-full min-h-[300px] lg:min-h-[400px]"
+						className="flex h-full w-full flex-col gap-4"
 					>
-						<div className="group block relative h-full w-full overflow-hidden rounded-2xl shadow-xl ring-1 ring-border/40 focus-visible:outline-2 focus-visible:outline-ring focus-visible:outline-offset-2">
-							<iframe
-								title="Peta Lokasi ZNL Kost Putri di Terban, Gondokusuman, Yogyakarta"
-								src={siteConfig.embedMapsUrl}
-								width="100%"
-								height="100%"
-								className="absolute inset-0 border-0"
-								allowFullScreen
-								loading="lazy"
-								referrerPolicy="no-referrer-when-downgrade"
-							/>
-							<div
-								className="pointer-events-none absolute inset-0 rounded-2xl ring-1 ring-inset ring-black/10"
-								aria-hidden="true"
-							/>
+						<LocationMapEmbed />
+						<div className="flex flex-wrap items-center gap-2 text-xs">
+							<span className="font-medium text-muted-foreground">
+								Panduan lokasi terkait:
+							</span>
+							<Link
+								href="/lokasi/terban-gondokusuman"
+								className="rounded-full border border-border/70 bg-background px-3 py-1.5 font-medium text-foreground transition-colors hover:border-primary/40 hover:text-primary"
+							>
+								Area Terban & Gondokusuman
+							</Link>
+							<Link
+								href="/akses-kampus/ugm"
+								className="rounded-full border border-border/70 bg-background px-3 py-1.5 font-medium text-foreground transition-colors hover:border-primary/40 hover:text-primary"
+							>
+								Akses ke UGM
+							</Link>
+							<Link
+								href="/akses-kampus/uny"
+								className="rounded-full border border-border/70 bg-background px-3 py-1.5 font-medium text-foreground transition-colors hover:border-primary/40 hover:text-primary"
+							>
+								Akses ke UNY
+							</Link>
 						</div>
 					</MotionWrapper>
 				</div>

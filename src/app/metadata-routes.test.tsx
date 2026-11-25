@@ -27,12 +27,20 @@ afterAll(() => {
 });
 
 describe("Metadata Routes (sitemap.xml & robots.txt)", () => {
-	it("generates a canonical single-URL sitemap without anchors or fake dates", () => {
+	it("generates canonical indexable URLs in sitemap without anchors or fake dates", () => {
 		const entries = sitemap();
-		expect(entries).toEqual([{ url: `${siteConfig.url}/` }]);
-		expect(entries[0]).not.toHaveProperty("lastModified");
-		expect(entries[0]).not.toHaveProperty("priority");
-		expect(entries[0]).not.toHaveProperty("changeFrequency");
+		expect(entries).toHaveLength(12);
+		for (const entry of entries) {
+			expect(entry.url.startsWith(siteConfig.url)).toBe(true);
+			expect(entry.url).not.toContain("#");
+			expect(entry).not.toHaveProperty("lastModified");
+			expect(entry).not.toHaveProperty("priority");
+			expect(entry).not.toHaveProperty("changeFrequency");
+		}
+		expect(entries.map((e) => e.url)).toContain(`${siteConfig.url}/`);
+		expect(entries.map((e) => e.url)).toContain(
+			`${siteConfig.url}/lokasi/terban-gondokusuman`,
+		);
 	});
 
 	it("generates robots.txt allowing all crawlers and pointing to production sitemap", () => {
@@ -54,7 +62,7 @@ describe("On-Page Local SEO & Conversion Smoke Tests", () => {
 
 	it("renders LocationSection with consistent NAP, WhatsApp, and Google Maps links", () => {
 		render(<LocationSection />);
-		expect(screen.getByText(siteConfig.address)).toBeDefined();
+		expect(screen.getAllByText(siteConfig.address).length).toBeGreaterThan(0);
 		expect(screen.getByText(siteConfig.phoneDisplay)).toBeDefined();
 		const mapsLink = screen.getByRole("link", {
 			name: /Buka di Google Maps/i,

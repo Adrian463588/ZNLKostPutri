@@ -10,13 +10,12 @@ import { siteConfig, whatsappUrl } from "@/config/site";
 import { cn } from "@/lib/utils";
 
 const navLinks = [
-	{ href: "#beranda", label: "Beranda" },
-	{ href: "#tentang", label: "Tentang" },
-	{ href: "#fasilitas", label: "Fasilitas" },
-	{ href: "#kamar", label: "Kamar" },
-	{ href: "#galeri", label: "Galeri" },
-	{ href: "#lokasi", label: "Lokasi" },
-	{ href: "#faq", label: "FAQ" },
+	{ href: "/", label: "Beranda" },
+	{ href: "/#kamar", label: "Kamar" },
+	{ href: "/#fasilitas", label: "Fasilitas" },
+	{ href: "/lokasi/terban-gondokusuman", label: "Lokasi" },
+	{ href: "/panduan", label: "Panduan" },
+	{ href: "/#kontak", label: "Kontak" },
 ];
 
 export function Header() {
@@ -40,7 +39,7 @@ export function Header() {
 			<div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
 				{/* Logo */}
 				<Link
-					href="#beranda"
+					href="/"
 					className="flex items-center gap-2 group"
 					aria-label="ZNL Kost Putri - Beranda"
 				>

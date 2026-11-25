@@ -2,6 +2,7 @@ import { Footer } from "@/components/layout/Footer";
 import { Header } from "@/components/layout/Header";
 import { AboutSection } from "@/components/sections/AboutSection";
 import { CTASection } from "@/components/sections/CTASection";
+import { ExploreHubSection } from "@/components/sections/ExploreHubSection";
 import { FAQSection } from "@/components/sections/FAQSection";
 import { FacilitiesSection } from "@/components/sections/FacilitiesSection";
 import { GallerySection } from "@/components/sections/GallerySection";
@@ -29,6 +30,7 @@ export default function HomePage() {
 				<GallerySection />
 				<LocationSection />
 				<FAQSection />
+				<ExploreHubSection />
 				<CTASection />
 			</main>
 			<Footer />

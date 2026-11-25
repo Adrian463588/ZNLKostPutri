@@ -1,0 +1,74 @@
+[
+	{
+		"name": "Mamikos",
+		"website": "https://mamikos.com",
+		"category": "indirect-marketplace",
+		"targetKeywords": [
+			"kost putri terban gondokusuman",
+			"kost putri dekat ugm"
+		],
+		"searchIntent": "transactional",
+		"usp": "Real-time app booking, category filters, and online virtual tours",
+		"contentGaps": [
+			"Account login often required before direct chat",
+			"Templated neighborhood descriptions without micro-street nuance"
+		],
+		"znlOpportunity": "Direct WhatsApp contact with Ibu Kost without app login plus hyperlocal Terban GK V guide",
+		"evidenceSources": [
+			"Public search results for site:mamikos.com kost putri Terban Gondokusuman"
+		],
+		"lastReviewed": "2026-11-26"
+	},
+	{
+		"name": "Infokost.id",
+		"website": "https://infokost.id",
+		"category": "indirect-directory",
+		"targetKeywords": ["kost putri terban", "kost putri gondokusuman"],
+		"searchIntent": "commercial-investigation",
+		"usp": "Directory listings grouped by district and campus proximity",
+		"contentGaps": [
+			"Uniform template copy across listings",
+			"Limited guidance on survey safety and direct budgeting"
+		],
+		"znlOpportunity": "Authentic property photos/video, transparent house rules, and survey checklist",
+		"evidenceSources": [
+			"Public search results for kost putri Terban Gondokusuman UGM"
+		],
+		"lastReviewed": "2026-11-26"
+	},
+	{
+		"name": "Rukita",
+		"website": "https://www.rukita.co",
+		"category": "indirect-coliving",
+		"targetKeywords": ["kost jogja dekat ugm", "coliving mahasiswi yogyakarta"],
+		"searchIntent": "commercial-investigation",
+		"usp": "Managed coliving branding and student lifestyle blog articles",
+		"contentGaps": [
+			"Focuses heavily on Sleman/Pogung/Seturan rather than Terban GK V inner-city residential alleys"
+		],
+		"znlOpportunity": "Dedicated Terban & Gondokusuman inner-city living guide and independent owner transparency",
+		"evidenceSources": [
+			"Public search results for alternatif mencari kost Yogyakarta"
+		],
+		"lastReviewed": "2026-11-26"
+	},
+	{
+		"name": "Unycommunity & Campus Blogs",
+		"website": "https://unycommunity.com",
+		"category": "search-competitor-editorial",
+		"targetKeywords": [
+			"cara mencari kost uny yogyakarta",
+			"kost mahasiswa baru jogja"
+		],
+		"searchIntent": "informational",
+		"usp": "Student-oriented tips on neighborhoods and field survey routes",
+		"contentGaps": [
+			"No interactive student cost calculator or verified property entity link"
+		],
+		"znlOpportunity": "Actionable guides paired with client-side budget calculator and direct survey CTA",
+		"evidenceSources": [
+			"Public search results for cara mencari kost Yogyakarta UGM UNY"
+		],
+		"lastReviewed": "2026-11-26"
+	}
+]

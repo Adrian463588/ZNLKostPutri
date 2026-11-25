@@ -1,0 +1,40 @@
+[
+	{
+		"id": "kost-putri-yogyakarta",
+		"name": "Kost Putri Yogyakarta",
+		"pillarUrl": "/panduan/mencari-kost-putri-jogja",
+		"supportingUrls": ["/", "/kebijakan-privasi"]
+	},
+	{
+		"id": "hyperlocal-living",
+		"name": "Hyperlocal Living (Terban & Gondokusuman)",
+		"pillarUrl": "/lokasi/terban-gondokusuman",
+		"supportingUrls": ["/", "/akses-kampus/ugm", "/akses-kampus/uny"]
+	},
+	{
+		"id": "kost-mahasiswa",
+		"name": "Kost Mahasiswa (UGM & UNY)",
+		"pillarUrl": "/akses-kampus/ugm",
+		"supportingUrls": [
+			"/akses-kampus/uny",
+			"/panduan/mencari-kost-putri-jogja",
+			"/tools/kalkulator-anggaran-kost"
+		]
+	},
+	{
+		"id": "financial-planning",
+		"name": "Financial Planning & Student Budget",
+		"pillarUrl": "/panduan/biaya-kost-mahasiswa-jogja",
+		"supportingUrls": ["/tools/kalkulator-anggaran-kost"]
+	},
+	{
+		"id": "rental-discovery",
+		"name": "Rental Discovery, Alternatives & Safety",
+		"pillarUrl": "/panduan",
+		"supportingUrls": [
+			"/panduan/alternatif-mencari-kost-selain-mamikos",
+			"/panduan/checklist-survei-kost",
+			"/panduan/menghindari-penipuan-kost"
+		]
+	}
+]
