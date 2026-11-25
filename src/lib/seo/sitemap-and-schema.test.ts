@@ -2,7 +2,11 @@ import { describe, expect, it } from "vitest";
 import { siteConfig } from "@/config/site";
 import { allSeoContents, campusGuides, editorialGuides } from "@/content";
 import { propertyData } from "@/data/property";
-import { buildContentMetadata, buildStaticMetadata } from "@/lib/seo/metadata";
+import {
+	buildContentMetadata,
+	buildSiteVerification,
+	buildStaticMetadata,
+} from "@/lib/seo/metadata";
 import { getIndexableSitemapEntries } from "@/lib/seo/sitemap";
 import {
 	buildContentStructuredData,
@@ -86,5 +90,15 @@ describe("Sitemap filtering, metadata, and structured data consistency", () => {
 			"CollectionPage",
 			"BreadcrumbList",
 		]);
+	});
+
+	it("emits Google Search Console verification metadata from siteConfig with optional env overrides", () => {
+		expect(buildSiteVerification()).toEqual({
+			google: siteConfig.googleSiteVerification,
+		});
+		expect(buildSiteVerification("custom-token", "bing-token")).toEqual({
+			google: "custom-token",
+			other: { "msvalidate.01": "bing-token" },
+		});
 	});
 });

@@ -137,6 +137,24 @@ export function runPostBuildAudit() {
 			);
 		}
 
+		if (route === "/") {
+			const expectedToken = "pAuwyhNP3sZjanFzrhWIFw5X8KPB2KupDKbJqS-YFgw";
+			const gscMeta =
+				extractFirst(
+					/<meta\s+name="google-site-verification"\s+content="([^"]*)"/i,
+					html,
+				) ||
+				extractFirst(
+					/<meta\s+content="([^"]*)"\s+name="google-site-verification"/i,
+					html,
+				);
+			if (gscMeta !== expectedToken) {
+				errors.push(
+					`Google Search Console meta tag mismatch on /: got '${gscMeta}', expected '${expectedToken}'`,
+				);
+			}
+		}
+
 		if (ldJsonMatches.length === 0) {
 			errors.push(`Missing JSON-LD script on ${route}`);
 		} else {
