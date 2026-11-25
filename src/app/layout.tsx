@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { siteConfig } from "@/config/site";
+import { buildSiteVerification } from "@/lib/seo/metadata";
 
 const inter = Inter({
 	subsets: ["latin"],
@@ -9,19 +10,10 @@ const inter = Inter({
 	display: "swap",
 });
 
-const googleVerification =
-	process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION?.trim();
-const bingVerification = process.env.NEXT_PUBLIC_BING_SITE_VERIFICATION?.trim();
-
-const verification: Metadata["verification"] =
-	googleVerification || bingVerification
-		? {
-				...(googleVerification ? { google: googleVerification } : {}),
-				...(bingVerification
-					? { other: { "msvalidate.01": bingVerification } }
-					: {}),
-			}
-		: undefined;
+const verification = buildSiteVerification(
+	process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION,
+	process.env.NEXT_PUBLIC_BING_SITE_VERIFICATION,
+);
 
 export const metadata: Metadata = {
 	metadataBase: new URL(siteConfig.url),

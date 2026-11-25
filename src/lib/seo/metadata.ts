@@ -88,3 +88,18 @@ export function buildContentMetadata(content: SeoContent): Metadata {
 		type: isArticle ? "article" : "website",
 	});
 }
+
+export function buildSiteVerification(
+	googleEnv?: string,
+	bingEnv?: string,
+): Metadata["verification"] {
+	const google = googleEnv?.trim() || siteConfig.googleSiteVerification;
+	const bing = bingEnv?.trim();
+
+	if (!google && !bing) return undefined;
+
+	return {
+		...(google ? { google } : {}),
+		...(bing ? { other: { "msvalidate.01": bing } } : {}),
+	};
+}
