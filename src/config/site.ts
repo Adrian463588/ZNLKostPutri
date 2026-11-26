@@ -33,7 +33,6 @@ export const siteConfig = {
 		height: 630,
 		alt: "ZNL Kost Putri di Terban, Gondokusuman, Yogyakarta — tampak depan bangunan dan kamar kost",
 	},
-	googleSiteVerification: "pAuwyhNP3sZjanFzrhWIFw5X8KPB2KupDKbJqS-YFgw",
 	author: "Adrian Syah Abidin",
 	authorUrl: "https://www.linkedin.com/in/adrian-syah-abidin-0416b81b9/",
 } as const;

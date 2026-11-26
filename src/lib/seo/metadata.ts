@@ -93,7 +93,7 @@ export function buildSiteVerification(
 	googleEnv?: string,
 	bingEnv?: string,
 ): Metadata["verification"] {
-	const google = googleEnv?.trim() || siteConfig.googleSiteVerification;
+	const google = googleEnv?.trim();
 	const bing = bingEnv?.trim();
 
 	if (!google && !bing) return undefined;

@@ -138,7 +138,8 @@ export function runPostBuildAudit() {
 		}
 
 		if (route === "/") {
-			const expectedToken = "pAuwyhNP3sZjanFzrhWIFw5X8KPB2KupDKbJqS-YFgw";
+			const expectedToken =
+				process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION?.trim();
 			const gscMeta =
 				extractFirst(
 					/<meta\s+name="google-site-verification"\s+content="([^"]*)"/i,
@@ -148,10 +149,13 @@ export function runPostBuildAudit() {
 					/<meta\s+content="([^"]*)"\s+name="google-site-verification"/i,
 					html,
 				);
-			if (gscMeta !== expectedToken) {
+			if (expectedToken && gscMeta !== expectedToken) {
 				errors.push(
-					`Google Search Console meta tag mismatch on /: got '${gscMeta}', expected '${expectedToken}'`,
+					`Google Search Console meta tag mismatch on /: got '${gscMeta}', expected token from NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION`,
 				);
+			}
+			if (gscMeta === "" && html.includes("google-site-verification")) {
+				errors.push("Empty google-site-verification meta tag emitted on /");
 			}
 		}
 

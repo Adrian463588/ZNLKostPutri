@@ -92,13 +92,12 @@ describe("Sitemap filtering, metadata, and structured data consistency", () => {
 		]);
 	});
 
-	it("emits Google Search Console verification metadata from siteConfig with optional env overrides", () => {
-		expect(buildSiteVerification()).toEqual({
-			google: siteConfig.googleSiteVerification,
-		});
-		expect(buildSiteVerification("custom-token", "bing-token")).toEqual({
-			google: "custom-token",
-			other: { "msvalidate.01": "bing-token" },
+	it("resolves Search Console verification strictly from runtime environment variables", () => {
+		expect(buildSiteVerification()).toBeUndefined();
+		expect(buildSiteVerification("   ", "")).toBeUndefined();
+		expect(buildSiteVerification("test-gsc-token", "test-bing-token")).toEqual({
+			google: "test-gsc-token",
+			other: { "msvalidate.01": "test-bing-token" },
 		});
 	});
 });
