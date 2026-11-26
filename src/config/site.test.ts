@@ -2,12 +2,10 @@ import { describe, expect, it } from "vitest";
 import { createWhatsappUrl, siteConfig } from "./site";
 
 describe("Site Configuration", () => {
-	it("should have the correct location, name, and Google Search Console verification token", () => {
+	it("should have the correct location and name without hardcoded verification secrets", () => {
 		expect(siteConfig.name).toBe("ZNL Kost Putri");
 		expect(siteConfig.location).toBe("Yogyakarta");
-		expect(siteConfig.googleSiteVerification).toBe(
-			"pAuwyhNP3sZjanFzrhWIFw5X8KPB2KupDKbJqS-YFgw",
-		);
+		expect("googleSiteVerification" in siteConfig).toBe(false);
 	});
 
 	it("should correctly encode whatsapp message", () => {
